@@ -1,8 +1,13 @@
 \documentclass[11pt,a4paper]{article}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{parskip}
 
 %opening
-\title{}
-\author{}
+\author{Simon Cholewa}
+\title{2. Excercises MAT}
+
+\renewcommand{\thesubsection}{\thesection.\Alph{subsection}}
 
 \begin{document}
 
@@ -12,20 +17,56 @@
 
 \maketitle
 
+
+
 \section{Excercise DSI-01}
-A) Read the PWC Report from the reference section.
-What areas are covered to have a huge impact by data science?
-B) Read the McKinsey Report on AI.
+\subsection{}
+\textit{Read the PWC Report from the reference section.
+What areas are covered to have a huge impact by data science?}
+
+In der Studie wird ein \emph{AI Impact Index} vorgestellt (S.~10 ff.). Darin wird beschrieben, in welchem Ausmaß Auswirkungen der KI auf verschiedene Wirtschaftszweige in welchem Zeitrahmen erwartet werden.
+
+Auf einer Skala von 1 bis 5 sind der Gesundheits- und Automobilsektor am stärksten mit einem Wert von jeweils 3,7 bewertet. Auf dem dritten Rang finden sich die Finanzdienstleistungen (Index 3,3). Für diese drei Industrien wurde grob über ein Drittel der Auswirkungen innerhalb der drei auf die Publikation folgenden Jahre erwartet, das heißt bis 2020.
+
+Bis 2024 liegen diese Zahlen für den Gesundheitssektor bei 23~\% für die Automobilindustrie bei 47~\% und die Finanzdienstleistungen sogar bei 59~\%.
+
+\subsection{}
+\textit{Read the McKinsey Report on AI.
 Do you agree and understand exhibit 8? Are there steps missing?
-Half page for each topic is fine.
+Half page for each topic is fine.}
+
+
 
 \section{Excercise DSI-02}
-Make up your own example of a machine learning task with a binary classification
-with your own numbers. Like e.g. recognising skin cancer. Calculate precision and re-
-call.
+\textit{Make up your own example of a machine learning task with a binary classification
+with your own numbers. Like e.g. recognising skin cancer. Calculate precision and recall.}
+
+Ein Anwendungsfall für binäre Klassifikation ist die Bewertung, ob ein bestimmtes Straßenschild auf einem Bild sichtbar ist, beispielsweise ein Stop-Schild.
+
+Das trainierte System wird mit einem Set von 100 Bildern getestet, um die Erkennungsgüte mittels \emph{precision} und \emph{recall} festzustellen. Es wird angenommen, dass zehn Prozent aller Verkehrsschilder Stop-Schilder sind. Dieses Verhältnis wird im Testset abgebildet:
+\begin{itemize}
+	\item 10 Stop-Schilder
+	\item 90 Nicht-Stop-Schilder
+\end{itemize}
+
+Das System liefert folgende Resultate für das Testset:
+
+\begin{itemize}
+	\item 2 Stop-Schilder werden nicht erkannt ($fn$)
+	\item 8 Stop-Schilder werden korrekt erkannt ($tp$)
+	\item 3 Nicht-Stop-Schilder werden als Stop-Schilder erkannt ($fp$)
+	\item 87 Stop-Schilder werden korrekt erkannt ($tn$)
+\end{itemize}
+
+$precision = \dfrac{tp}{tp + fp} = \dfrac{8}{8 + 3} \approx 0,73$
+$recall = \dfrac{tp}{tp + fn} = \dfrac{8}{8 + 2} = 0,8 $
+
 
 \section{Excercise DSI-03}
-What is the F1 measure of your example? (real calculation needed here).
+\textit{What is the F1 measure of your example? (real calculation needed here).}
 
+$ F1 = 2 \cdot \dfrac{precision \cdot recall}{precision + recall} 
+     \approx 2 \cdot \dfrac{0,73 \cdot 0,8}{0,73 + 0,8} \approx 2 \cdot \dfrac{0,589}{1,54}
+     \approx 0,77$
 
 \end{document}
