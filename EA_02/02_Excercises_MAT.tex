@@ -1,4 +1,6 @@
 \documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
 \usepackage{amsmath}
 \usepackage{parskip}
 
@@ -6,8 +8,12 @@
 \author{Simon Cholewa}
 \title{2. Excercises MAT}
 
-\begin{document}
+\hyphenation{
+	Mo-tor-ü-ber-wach-ung 
+}
 
+
+\begin{document}
 
 \maketitle
 
@@ -54,9 +60,49 @@ $
 $
 
 \section{Determinante}
-Make up your own example of a machine learning task with a binary classification
-with your own numbers. Like e.g. recognising skin cancer. Calculate precision and re-
-call.
+\textit{\begin{itemize}
+	\item What is a determinant of a matrix?
+	\item What can it be used for?
+	\item What is the resulting determinant of this matrix (manually):
+\end{itemize}}
 
+
+
+\subsection{Eigenschaften}
+Nach Bronstein (1996):
+\begin{enumerate}
+	\item Eine Determinante ändert sich nicht, wenn man Zeilen und Spalten miteinander vertauscht.
+	\item Eine Determinante ändert ihr Vorzeichen, wenn man zwei Zeilen oder zwei Spalten miteinander vertauscht.
+	\item Eine Determinante ist gleich null, wenn sie zwei gleiche Spalten oder zwei gleiche Zeilen besitzt.
+	\item Eine Determinante ändert sich nicht, wenn man zu einer Zeile das Vielfache einer anderen Zeile addiert.
+	\item Eine Determinante ändert sich nicht, wenn man zu einer Spalte das Vielfache einer anderen Spalte addiert.
+	\item Eine Determinante multipliziert man mit einer Zahl, indem [man] eine fest gewählte Zeile (oder Spalte) mit dieser Zahl multipliziert.
+\end{enumerate}
+
+Aus 3. und 4. leitet sich ab, dass $\det \neq 0$ für linear unabhängige Gleichungssystem gilt. Das heißt, unter dieser Bedingung lässt sich eine eindeutige Lösung berechnen.
+
+\subsection{Berechnug}
+Eine Möglichkeit der allgemeingültigen Berechnung der Determinante $D$ ist durch den Laplaceschen Entwicklungssatz (Bronstein, 1996) gegeben:
+
+$D = a_{k1} A_{k1} + a_{k2} A_{k2} ~...~ a_{kn} A_{kn}$
+
+Dabei ist $k$ irgendeine fest gewählte Zeilennummer. Ferner bezeichnet $A_{kj}$ die sogenannte \textit{Adjunkte} zu dem Element $a_{kj}$. Definitionsgemäß besteht $A_{kj}$ aus derjenigen Determinante, die durch Streichen der $k$-ten Zeile und $j$-ten Spalte entsteht, multipliziert mit dem Vorzeichen $(-1)^{j+k}$.
+
+Das bedeutet also, dass die Matrix in Matrizen, die um eine Zeile und eine Spalte, kleiner sind, aufgespalten wird. Diese werden unter Beachtung des Vorzeichens mit einem Faktor versehen. Diese Matrizen ihrerseits werden weiter aufgespalten bis die nur noch aus einer Zeile und einer Spalte bestehen.
+
+\subsection{Verwendungsmöglichkeiten}
+
+\section{Rechenbeispiel}
+$
+\det
+\left(
+	\begin{array}{rrr}
+	1 & 3 & 4\\
+	-2 & 3 & 5\\
+	2 & -3 & 4\\
+	\end{array}
+\right)
+= ...
+$
 
 \end{document}
