@@ -81,6 +81,8 @@ Nach Bronstein (1996):
 
 Aus 3. und 4. leitet sich ab, dass $\det \neq 0$ für linear unabhängige Gleichungssystem gilt. Das heißt, unter dieser Bedingung lässt sich eine eindeutige Lösung berechnen.
 
+Determinanten können nur für $n \times n$-Matrizen berechnet werden.
+
 \subsection{Berechnug}
 Eine Möglichkeit der allgemeingültigen Berechnung der Determinante $D$ ist durch den Laplaceschen Entwicklungssatz (Bronstein, 1996) gegeben:
 
@@ -91,8 +93,14 @@ Dabei ist $k$ irgendeine fest gewählte Zeilennummer. Ferner bezeichnet $A_{kj}$
 Das bedeutet also, dass die Matrix in Matrizen, die um eine Zeile und eine Spalte, kleiner sind, aufgespalten wird. Diese werden unter Beachtung des Vorzeichens mit einem Faktor versehen. Diese Matrizen ihrerseits werden weiter aufgespalten bis die nur noch aus einer Zeile und einer Spalte bestehen.
 
 \subsection{Verwendungsmöglichkeiten}
-Blablabla
+\begin{itemize}
+	\item Lösen linearer Gleichungssystem (Cramersche Regel)
+	\item Ist $\det \neq 0$, ist das lineare Gleichungssystem eindeutig lösbar
+	\item Ist $\det = 0$, ist die Matrix nicht invertierbar
+	\item Beschreibt den Skalierungsfaktor des $n$-dimensionalen Volumens der Transformation, die durch die Matrix beschrieben wird \footnote{https://textbooks.math.gatech.edu/ila/determinants-volumes.html}
+\end{itemize}
 
+\newpage
 \section{Rechenbeispiel}
 $
 \det
@@ -159,9 +167,11 @@ $
 \right)
 $
 
-$
-= 3\cdot4 - (-3\cdot5) + 2\cdot[3\cdot4 - (-3\cdot4)] + 2\cdot(3\cdot5-3\cdot4) 
-= 27 + 48 + 6
-= 81$
+$= 3\cdot4 - (-3\cdot5) + 2\cdot[3\cdot4 - (-3\cdot4)] + 2\cdot(3\cdot5-3\cdot4) $
 
+$= 27 + 48 + 6$
+
+$= 81$
+
+Zum Lösen einer $3 \times 3$-Matrix existieren schnellere Verfahren. Hier sollte das oben erwähnte allgemeingültige Verfahren demonstriert werden. Beim Lösen der $2 \times 2$-Matrizen wurde auf ein spezielles Lösungsverfahren zurückgegriffen.
 \end{document}
