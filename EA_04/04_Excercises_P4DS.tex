@@ -1,0 +1,49 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{listings}
+
+%opening
+\author{Simon Cholewa}
+\title{4. Python 4 Data Science Excercise}
+
+\hyphenation{
+	Mo-tor-ü-ber-wach-ung 
+}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Jupyter Notebook Setup}
+\textit{Set up your Jupyter Notebook. Either by hand or by Anaconda or Google Colab! Play with it and send me e.g. a GitHub link or a PDF.
+Do not send the *.ipynb !}
+   
+\section{101 NumPy Exercises}
+\textit{Read and understand the first 25 Exercises from 101 NumPy Exercises. (send my any sloppy prove of a few solves ;-)}
+
+\lstinputlisting[numbers=left, language=Python, frame=single, tabsize=2, basicstyle=\footnotesize, showstringspaces=false]{101.py}
+
+\section{Jupyter Notebook Exercises}
+\textit{Do the following exercise in a Jupyter Notebook (a GitHub Link would be the best):}
+
+\textit{\begin{enumerate}
+	\item Load the countries.csv directly via URL import into your panda data frame!
+	\item Display some basic information as rows, columns and some basic statistical info.
+	\item Show the last 4 rows of the data frame.
+	\item Show all the row of countries who have the EURO
+	\item Show only name and Currency in a new data frame
+	\item Show only the rows/countries that have more than 2000 BIP (it is in Milliarden USD Bruttoinlandsprodukt)
+	\item Select all countries where with inhabitants between 50 and 150 Mio
+	\item Change BIP to Bip
+	\item Calculate the Bip sum
+	\item Calculate the average people of all countries
+	\item Sort by name alphabetically
+	\item Create a new data frame from the original where the area is changed as follows: all countries with > 1000000 get BIG and <= 1000000 get SMALL in the cell replaced!
+\end{enumerate}}
+
+\end{document}
