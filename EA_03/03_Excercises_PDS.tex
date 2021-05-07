@@ -20,44 +20,29 @@
 \maketitle
 
 \section{IDE Set Up}
-\textit{A1: Set up a sound development environment. Minimum is Sublime Text.}
+\textit{Set Up your IDE or at least a good editor for Python with a Python mode/ support! (name + personal screenshot included)}
 
 Abbildung \ref{fig:pycharm} auf zeigt einen Screenshot meiner PyCharm-Installation.
 
 \begin{figure}[!htbp] 
 	\centering
 	\includegraphics[width=1.0\linewidth]{images/PyCharm}
-	\caption[PyCharm]{PyCharm installiert und konfiguriert}
+	\caption[PyCharm]{PyCharm 2021.1 installiert und konfiguriert.}
 	\label{fig:pycharm}
 \end{figure}
 
 
 \section{Dive into Python}
-\textit{A2: Code a little game in Python as Tic Tac Toe, Hangman, Word Guessing / Hangman, Othello, etc. Note that there is no fancy graphics required! Console apps are ok!}
+\textit{Write a tiny game or everything else in Python to get fluent in Python. No fancy graphics needed. A tic-tac-toe on console is fine. If you already wrote Python code, send me the GitHub Link or a part of the code in the PDF with an explanation (I will Goole the code, so no copycat, please ;-)}
 
-Kleines Zahlenraten in Python:
+Hier habe ich wirklich ein klassisches Minimalbeispiel für ein Konsolenspiel in Python programmiert. Der Spieler hat eine bestimmte Anzahl an versuchen, eine Zufallszahl zu erraten. Als Hinweis erhält er die Information, ob die gesuchte Zahl größer oder kleiner als der Tipp ist. Siehe dazu auch Abbildung \ref{fig:pycharm} aus der vorherigen Aufgabe.
 
-\lstinputlisting[language=Python, frame=single, tabsize=2, basicstyle=\footnotesize, showstringspaces=false]{Zahlenraten/main.py}
+Umgesetzt ist das Spiel in einer Funktion \texttt{zahlenraten}, die im Hauptprogramm mit dem Parameter 50 aufgerufen wird (Z.~31), welcher den Standardwert von 100 für den Wertebereich ersetzt. Für die maximale Anzahl an Rateversuchen wird das Default von 5 (Z.~3) nicht geändert. Für die Berechnung der gesuchten Zahl wird nutzt Numpy genutzt (Z.~4).
 
+\bigskip
 
-\section{NumPy}
-\textit{A3: If you have not done so already, really work through the Quickstart Tutorial from NumPy \footnote{https://numpy.org/doc/stable/user/quickstart.html}}
+\lstinputlisting[numbers=left, language=Python, frame=single, tabsize=2, basicstyle=\footnotesize, showstringspaces=false]{Zahlenraten/main.py}
 
-\lstinputlisting[language=Python, frame=single, tabsize=2, basicstyle=\footnotesize, showstringspaces=false]{Zahlenraten/numpy_quickstart.py}
+In einer \texttt{while}-Schleife (Z.~10) werden so lange Zahlen von der Tastatur eingelesen, bis keine Versuche mehr verfügbar sind oder die gesuchte Zahl erraten wurde. Zum Einlesen der Tastatureingaben wird \texttt{input()} eigesetzt. Da hier auch Strings eingelesen werden können, wird versucht (Z.~12), die Eingabe in einen Integer umzuwandeln (Z.~13). Falls das fehlschlagen sollte, weil beispielsweise ein Buchstabe eingegeben wurde, wird der \texttt{except}-Teil ausgeführt. Der Zähler für die Versuche wird nicht inkrementiert.
 
-\section{101 NumPy}
-\textit{If you have not done so already, really work through ALL the 101 NumPy exercises\footnote{https://www.machinelearningplus.com/python/101-numpy-exercises-python}. A great way to start from scratch!}
-
-Im Folgenden einige Beisiele:
-
-\lstinputlisting[language=Python, frame=single, tabsize=2, basicstyle=\footnotesize, showstringspaces=false]{Zahlenraten/101.py}
-
-\section{Handson Notebook}
-\textit{A5: This is also a wonderful introduction via a notebook \footnote{https://github.com/ageron/handson-ml/blob/master/tools\_numpy.ipynb}}
-
-\section{Pandas}
-\textit{A6: If you have not done so already, really work through the 10 min Tutorial from Pandas\footnote{https://pandas.pydata.org/pandas-docs/stable/10min.html}}
-
-\section{SciPy}
-\textit{A7: Now work through the tutorials given in the second section here:\footnote{https://docs.scipy.org/doc/scipy/reference/}. Much of the math is hard here but if something looks understandable to you (as basic distribution handling, etc.), then play with it.}
 \end{document}
