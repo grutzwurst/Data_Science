@@ -1,8 +1,19 @@
-\documentclass[]{article}
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{parskip}
 
 %opening
-\title{}
-\author{}
+\author{Simon Cholewa}
+\title{2. Excercises MAT}
+
+\renewcommand{\thesubsection}{\thesection.\Alph{subsection}}
+
+
+\hyphenation{
+	Mo-tor-ü-ber-wach-ung 
+}
 
 \begin{document}
 
@@ -12,13 +23,67 @@
 
 \maketitle
 
+
+
 \section{Excercise DSI-01}
+\subsection{}
+\textit{Read the PWC Report from the reference section.
+What areas are covered to have a huge impact by data science?}
+
+In der Studie wird ein \emph{AI Impact Index} vorgestellt (S.~10 ff.). Darin wird beschrieben, in welchem Ausmaß Auswirkungen der KI auf verschiedene Wirtschaftszweige in welchem Zeitrahmen erwartet werden.
+
+Auf einer Skala von 1 bis 5 sind der Gesundheits- und Automobilsektor am stärksten mit einem Wert von jeweils 3,7 bewertet. Auf dem dritten Rang finden sich die Finanzdienstleistungen (Index 3,3). Für diese drei Industrien wurde grob über ein Drittel der Auswirkungen innerhalb der drei auf die Publikation folgenden Jahre erwartet, das heißt, bis 2020. Bis 2024 liegen diese Zahlen für den Gesundheitssektor bei 23~\%, für die Automobilindustrie bei 47~\% und die Finanzdienstleistungen sogar bei 59~\%.
+
+Laut der Studie birgt der Gesundheitssektor das größte Potenzial für KI bei der Unterstützung der Ärzte bei der Diagnose oder sogar der automatisierten Stellung einer Diagnose auf Grundlage von bildgebenden Verfahren. Weiterhin können mögliche Pandemien frühzeitig identifiziert und verfolgt werden, um ihre Eindämmung zu unterstützen.
+
+Als wahrscheinliche Potenziale im Automotive-Sektor werden autonomes Fahren, intelligente Systeme zur Fahrerunterstützung sowie die Motorüberwachung und Vorhersage zur erforderlichen Wartung genannt.
+
+Die Plätze vier bis sechs wurden ebenfalls mit einem Index von mindestens drei bewertet, das sind Transport und Logistik (3,2), Technologie, Kommunikation und Unterhaltung (3,1) und Einzelhandel (3,0).
+
+\subsection{}
+\textit{Read the McKinsey Report on AI.
+Do you agree and understand exhibit 8? Are there steps missing?
+Half page for each topic is fine.}
+
+Der Bericht aus Juni 2017 setzt den Fokus auf die Entwicklung neuer KI-basierter Produkte; die Optimierung bestehender Prozesse und Produkte wird eher peripher betrachtet. Konsequenterweise wird insbesondere auch auf agil-geführte Unternehmen eingegangen. Diese finden sich allerdings sehr viel seltener in der in Deutschland weit verbreiteten ,,konventionellen'' Industrie, wie der Automobilindustrie oder der chemischen Industrie.
+
+Um die Verbreitung von KI in diesen Zweigen voranzutreiben, sollten auch die hier dominierenden Managementideologien und gewachsenen Prozesse berücksichtigt werden. Im Bericht steht dazu ,,In many cases, the change-management challenges of transforming what many people do within an organization are greater than many of the technical challenges of implementing AI.'' (S.~34) Im Bericht wird als Lösung eine Entscheidung des Managements vorgeschlagen. Mir erscheint bei konservativ agierenden Vorständen die Wahrscheinlichkeit, dass eine Kehrtwende eingeschlagen wird, eher unwahrscheinlich. Ich sehe dort eher die Möglichkeit, dass einzelne Prozesse oder Tools Stück für Stück eine Transition erleben werden, ohne einem konzernweiten Plan zu gehorchen.
+
+Auf ethische Bedenken beim Einsatz von KI-Systemen wird aus meiner Sicht auch nicht genug eingegangen. In der Box 3 zu China auf S.~36 steht: ,,China could also take the lead in forming an international governing body to promote peaceful, inclusive, and sustainable development of AI technology.'' Diese Aussage ist zwar im Konjunktiv verfasst, scheint aber die allumfassenden Überwachungsmaßnahmen und das verbundene Social-Scoring-System komplett zu ignorieren.
+
+Ein weiter Punkt aus dem Bereich Ethik ist die Blackbox KI (s.~Box~4, S.~37). Der Grund für Entscheidungen/Bewertungen durch das KI-System kann nicht im Code gefunden werden, sondern höchstens in den Daten, die dem Lernprozess zu Grunde liegen. Das ist für eine Überwachung durch die Öffentlichkeit ein Problem und somit für die Akzeptanz in der Bevölkerung. Eine weitere Schwäche sind die Fehlerraten. Auch wenn eine Gesichtserkennungssoftware zu 99~Prozent Menschen korrekt identifiziert, wird von einhundert Menschen auch immer einer fälschlicherweise ,,verdächtigt''.
 
 
 \section{Excercise DSI-02}
+\textit{Make up your own example of a machine learning task with a binary classification
+with your own numbers. Like e.g. recognising skin cancer. Calculate precision and recall.}
+
+Ein Anwendungsfall für binäre Klassifikation ist die Bewertung, ob ein bestimmtes Straßenschild auf einem Bild sichtbar ist, beispielsweise ein Stop-Schild.
+
+Das trainierte System wird mit einem Set von 100 Bildern getestet, um die Erkennungsgüte mittels \emph{precision} und \emph{recall} festzustellen. Es wird angenommen, dass zehn Prozent aller Verkehrsschilder Stop-Schilder sind. Dieses Verhältnis wird im Testset abgebildet:
+\begin{itemize}
+	\item 10 Stop-Schilder
+	\item 90 Nicht-Stop-Schilder
+\end{itemize}
+
+Das System liefert folgende Resultate für das Testset:
+
+\begin{itemize}
+	\item 2 Stop-Schilder werden nicht erkannt ($fn$)
+	\item 8 Stop-Schilder werden korrekt erkannt ($tp$)
+	\item 3 Nicht-Stop-Schilder werden als Stop-Schilder erkannt ($fp$)
+	\item 87 Stop-Schilder werden korrekt erkannt ($tn$)
+\end{itemize}
+
+$precision = \dfrac{tp}{tp + fp} = \dfrac{8}{8 + 3} \approx 0,73$
+$recall = \dfrac{tp}{tp + fn} = \dfrac{8}{8 + 2} = 0,8 $
 
 
 \section{Excercise DSI-03}
+\textit{What is the F1 measure of your example? (real calculation needed here).}
 
+$ F1 = 2 \cdot \dfrac{precision \cdot recall}{precision + recall} 
+     \approx 2 \cdot \dfrac{0,73 \cdot 0,8}{0,73 + 0,8} \approx 2 \cdot \dfrac{0,589}{1,54}
+     \approx 0,77$
 
 \end{document}

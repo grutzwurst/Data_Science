@@ -1,0 +1,177 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{parskip}
+
+%opening
+\author{Simon Cholewa}
+\title{2. Excercises MAT}
+
+\hyphenation{
+	Mo-tor-ü-ber-wach-ung 
+}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Matrixmultiplikation}
+$
+\left( 
+	\begin{array}{rrr}
+		4 & 2 & 3 \\
+		5 & 1 & 6 \\
+	\end{array}
+ \right)
+ \cdot
+ \left(
+	\begin{array}{rr}
+		3 & 2 \\
+		-1 & -3 \\
+		6 & 8\\
+	\end{array}
+\right)$\\
+$
+=
+\left(
+	\begin{array}{cc}
+		3\cdot4 - 1\cdot2 + 6\cdot3 & 2\cdot4 - 3\cdot2 + 8\cdot3 \\
+		3\cdot5 - 1\cdot1 + 6\cdot6 & 2\cdot5 - 3\cdot1 + 8\cdot6 \\
+	\end{array}
+\right)$\\
+$
+=
+\left(
+	\begin{array}{cc}
+		12-2+18 & 8-6+24 \\
+		15-1+36 & 10-3+48\\
+	\end{array}
+\right)$\\
+$
+=
+\left(
+	\begin{array}{cc}
+		28 & 26 \\
+		50 & 55 \\
+	\end{array}
+\right)
+$
+
+\section{Determinante}
+\textit{\begin{itemize}
+	\item What is a determinant of a matrix?
+	\item What can it be used for?
+	\item What is the resulting determinant of this matrix (manually):
+\end{itemize}}
+
+
+
+\subsection{Eigenschaften}
+Nach Bronstein (1996):
+\begin{enumerate}
+	\item Eine Determinante ändert sich nicht, wenn man Zeilen und Spalten miteinander vertauscht.
+	\item Eine Determinante ändert ihr Vorzeichen, wenn man zwei Zeilen oder zwei Spalten miteinander vertauscht.
+	\item Eine Determinante ist gleich null, wenn sie zwei gleiche Spalten oder zwei gleiche Zeilen besitzt.
+	\item Eine Determinante ändert sich nicht, wenn man zu einer Zeile das Vielfache einer anderen Zeile addiert.
+	\item Eine Determinante ändert sich nicht, wenn man zu einer Spalte das Vielfache einer anderen Spalte addiert.
+	\item Eine Determinante multipliziert man mit einer Zahl, indem [man] eine fest gewählte Zeile (oder Spalte) mit dieser Zahl multipliziert.
+\end{enumerate}
+
+Aus 3. und 4. leitet sich ab, dass $\det \neq 0$ für linear unabhängige Gleichungssystem gilt. Das heißt, unter dieser Bedingung lässt sich eine eindeutige Lösung berechnen.
+
+Determinanten können nur für $n \times n$-Matrizen berechnet werden.
+
+\subsection{Berechnug}
+Eine Möglichkeit der allgemeingültigen Berechnung der Determinante $D$ ist durch den Laplaceschen Entwicklungssatz (Bronstein, 1996) gegeben:
+
+$D = a_{k1} A_{k1} + a_{k2} A_{k2} ~...~ a_{kn} A_{kn}$
+
+Dabei ist $k$ irgendeine fest gewählte Zeilennummer. Ferner bezeichnet $A_{kj}$ die sogenannte \textit{Adjunkte} zu dem Element $a_{kj}$. Definitionsgemäß besteht $A_{kj}$ aus derjenigen Determinante, die durch Streichen der $k$-ten Zeile und $j$-ten Spalte entsteht, multipliziert mit dem Vorzeichen $(-1)^{j+k}$.
+
+Das bedeutet also, dass die Matrix in Matrizen, die um eine Zeile und eine Spalte, kleiner sind, aufgespalten wird. Diese werden unter Beachtung des Vorzeichens mit einem Faktor versehen. Diese Matrizen ihrerseits werden weiter aufgespalten bis die nur noch aus einer Zeile und einer Spalte bestehen.
+
+\subsection{Verwendungsmöglichkeiten}
+\begin{itemize}
+	\item Lösen linearer Gleichungssystem (Cramersche Regel)
+	\item Ist $\det \neq 0$, ist das lineare Gleichungssystem eindeutig lösbar
+	\item Ist $\det = 0$, ist die Matrix nicht invertierbar
+	\item Beschreibt den Skalierungsfaktor des $n$-dimensionalen Volumens der Transformation, die durch die Matrix beschrieben wird \footnote{https://textbooks.math.gatech.edu/ila/determinants-volumes.html}
+\end{itemize}
+
+\newpage
+\section{Rechenbeispiel}
+$
+\det
+\left(
+	\begin{array}{rrr}
+	1 & 3 & 4\\
+	-2 & 3 & 5\\
+	2 & -3 & 4\\
+	\end{array}
+\right)
+$
+
+$
+= (-1)^{1+1} \cdot 1 \cdot \det 
+\left(
+	\begin{array}{rr}
+	3 & 5\\
+	-3 & 4\\
+	\end{array}
+\right)
+$
+
+$
++ ~(-1)^{1+2} \cdot (-2) \cdot \det 
+\left(
+\begin{array}{rr}
+3 & 4\\
+-3 & 4\\
+\end{array}
+\right)
+$
+
+$
++ ~(-1)^{1+3} \cdot 2 \cdot \det
+\left(
+\begin{array}{rr}
+3 & 4\\
+3 & 5\\
+\end{array}
+\right)
+$
+
+$
+= 1 \cdot \det 
+\left(
+\begin{array}{rr}
+	3 & 5\\
+	-3 & 4\\
+\end{array}
+\right)
++ 2 \cdot \det 
+\left(
+\begin{array}{rr}
+3 & 4\\
+-3 & 4\\
+\end{array}
+\right)
++ 2 \cdot \det 
+\left(
+\begin{array}{rr}
+3 & 4\\
+3 & 5\\
+\end{array}
+\right)
+$
+
+$= 3\cdot4 - (-3\cdot5) + 2\cdot[3\cdot4 - (-3\cdot4)] + 2\cdot(3\cdot5-3\cdot4) $
+
+$= 27 + 48 + 6$
+
+$= 81$
+
+Zum Lösen einer $3 \times 3$-Matrix existieren schnellere Verfahren. Hier sollte das oben erwähnte allgemeingültige Verfahren demonstriert werden. Beim Lösen der $2 \times 2$-Matrizen wurde auf ein spezielles Lösungsverfahren zurückgegriffen.
+\end{document}
