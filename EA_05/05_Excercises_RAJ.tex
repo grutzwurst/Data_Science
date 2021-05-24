@@ -1,0 +1,105 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{parskip}
+%\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+
+%opening
+\author{Simon Cholewa}
+\title{5. R and Julia Excercise}
+
+\hyphenation{
+	Mo-tor-ü-ber-wach-ung 
+}
+
+
+\begin{document}
+
+\maketitle
+
+\section{R}
+\textit{Write a program to guess a number in between 0 and 100!}
+
+\textit{Hence the computer invents the number and the user = you tries to guess it! }
+
+\lstinputlisting[numbers=left, language=R, frame=single, tabsize=2, basicstyle=\footnotesize, showstringspaces=false]{Zahlenraten.R}
+
+\newpage
+
+
+\section{R}
+\textit{Analyse the \textbf{esoph} dataset. Can you derive some useful statements from it? Use data() to see all available datasets. }
+
+\lstinputlisting[numbers=left, language=R, frame=single, tabsize=2, basicstyle=\footnotesize, showstringspaces=false]{esoph.R}
+
+Die Varianzanalyse ergibt, dass mit einer Sicherheit von 89~\% ($\alpha = 0.11$) Alkohol- und Tabakkonsum zu einem erhöhten Risiko führt, an Speiseröhrenkrebs zu erkranken.
+
+Ein lineares Modell ergibt mit einer Sicherheit von $p>99,9\%$, dass ein Zusammenhang zwischen dem Alter und dem Risiko, an Speiseröhrenkrebs zu erkranken, besteht.
+
+\section{Julia}
+\textit{Create a 2x4 two dimensional matrix with random floats in it and in the next step determine the biggest element.}
+
+\texttt{zufall = rand(2, 4)}
+
+\texttt{findmax(zufall)[1]}
+
+
+\section{Julia}
+\subsection{}
+\textit{Create two matrices of the same layout and test if addition and subtraction of the matrix works as expected: C = A + B}
+
+\texttt{A = [1 2 3 4; 4 3 2 1; 9 9 9 9; -5 3 4 0]}
+
+\texttt{B = [4 3 2 1; -4 4 14 17.4; -9 9 -9 9; 0 -3 -4 0]}
+
+\texttt{C = A + B}
+
+\texttt{C = A - B}
+
+\subsection{}
+\textit{Now compare matrix multiplication either this way A * B and this way A .* B. Whats the difference?!}
+
+Matrixmultiplikation:\\
+\texttt{C = A * B}
+
+Elementweise Multiplikation:\\
+\texttt{C = A .* B}
+
+\subsection{}
+\textit{What about matrix division with ,,/'' or,,\textbackslash''?!}
+
+\texttt{C = A / B} ergibt solch ein $C$, dass gilt $A = C \cdot B$.
+
+\texttt{C = A $\backslash$ B} ergibt solch ein $C$, dass gilt $B = A \cdot C$.
+
+
+\subsection{}
+\textit{Create a 3x3 integer matrix A with useful numbers. Now try A+1, A-1, A*2, A/2.}
+
+\texttt{A = [1 2 3; 4 3 2; -5 3 0]}
+
+\texttt{A .+ 1}
+
+\texttt{A .- 1}
+
+\texttt{A .* 2}
+
+\texttt{A ./ 2}
+
+\subsection{}
+\textit{Now multiply a 3x4 matrix with a suitable (4)vector. }
+
+\texttt{randn(3, 4) * [-1, 0, -1, 0]}
+
+oder
+
+\texttt{randn(3, 4) * [-1; 0; -1; 0]}
+
+Oder auch mit einem transponierten Zeilenvektor:
+
+\texttt{randn(3,4) * transpose([-1 0 -1 0])}
+
+\end{document}
