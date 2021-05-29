@@ -39,7 +39,7 @@ print(pd.value_counts(df.gender, dropna=False))
 df.gender.fillna('Unknown', inplace=True)
 
 # There is an id missing
-print(df[pd.isna(df.id)])
+print('Number of missing ids:', df.id.isnull().sum())
 
 # Data without id are still useful. We also have dropped some rows.
 # So the id column can be dropped:
