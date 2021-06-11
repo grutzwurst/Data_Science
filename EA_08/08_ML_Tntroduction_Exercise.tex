@@ -1,0 +1,65 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{parskip}
+%\usepackage{graphicx}
+%\usepackage{listings}
+%\usepackage{hyperref}
+%\usepackage{float}
+
+%opening
+\author{Simon Cholewa}
+\title{8. ML Introduction Exercise}
+
+\hyphenation{
+	Mo-tor-ü-ber-wach-ung 
+}
+
+
+\begin{document}
+
+\maketitle
+
+\section*{Excercises MLI}
+
+\begin{enumerate}
+	\item What is the meaning of generalization in the paper?
+	\item What are the many faces of overfitting?
+	\item Why do humans have problems in higher dimensions?
+	\item What is feature engineering?
+	\item Why does more data beats clever algorithms?
+	\item What is ensemble learning?
+	\item What is accuracy in data science? 
+\end{enumerate}
+
+\subsection*{Generalization}
+Es sollen auch unbekannte Daten, die nicht mit den Trainingsdaten übereinstimmen, möglichst korrekt klassifiziert werden. Generalisierung ist also das eigentliche Ziel von ML. Für erfolgreiches Generalisieren ist Wissen über die betreffenden Daten sehr hilfreich. Je höherdimensional die Daten sind, desto anspruchsvoller gestaltet sich das Generalisieren.
+
+\subsection*{Overfitting}
+\textit{Overfitting} ist das Gegenteil von Generalization. Übungsdaten werden perfekt klassifiziert, wobei im Training unbekannte -- aber ähnliche -- Daten im Extremfall nur zufällig richtig kategorisiert werden (als würde man ohne Vorwissen raten).
+
+\subsection*{Higher dimensions}
+Mehr als drei Dimensionen entsprechen nicht den Wahrnehmungsfähigkeiten der Menschen und entziehen sich somit seinem Erfahrungshorizont; vieldimensionale Punktewolken können nicht mit ,,einem Blick'' verstanden oder eingeschätzt werden.
+
+\subsection*{Feature engineering}
+\textit{Feature engineering} ist kontextspezifisches vorverarbeiten von Daten, eine Merkmalsextraktion. Die Merkmale enthalten mehr relevantes und Wissen und weniger Redundanz oder Irrelevanz, sie berücksichtigen das Umfeld und vereinfachen und verbessern den Lernprozess. ,,Intuition'', ,,Kreativität'' und
+,,schwarze Magie'' sind ebenfalls Teil des \textit{Feature engineering}.
+
+\subsection*{More data vs. clever algorithms}
+\begin{enumerate}
+	\item Die Klassifizierungsalgorithmen unterscheiden sich wenig voneinander
+	\item Neuronale Netze gleichen durch ihre Anpassungsfähigkeit ,,dümmere'' Algorithmen bis zu einem gewissen Grad aus
+	\item Unterschiedliche Klassifizierungsgrenzen können ähnliche Ergebnisse erzielen
+	\item Intelligentere Klassifikatoren sind komplexer und es ist schwieriger, sie zu ,,tunen''
+\end{enumerate}
+Diese Punkte sprechen eher gegen zu komplizierte Algorithmen und somit für mehr Daten.
+
+\subsection*{Ensemble Learning}
+Möglichst verschiedene Modelle werden kombiniert, um insgesamt bessere Ergebnisse zu ermöglichen. Geringe Zusatzkosten können zu einem (häufig viel) besseren Ergebnis führen. Tendenziell werden immer mehr Klassifikatoren kombiniert.
+
+
+\subsection*{Accuracy}
+\textit{Accuracy} ist ein Maß zur Bewertung der Performanz eines Algorithmus' bei einer bestimmten Aufgabe. Ziel ist eine möglichst hohe \textit{Accuracy}.
+
+\end{document}
