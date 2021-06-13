@@ -1,0 +1,60 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{parskip}
+%\usepackage{graphicx}
+%\usepackage{listings}
+\usepackage{hyperref}
+%\usepackage{float}
+
+%opening
+\author{Simon Cholewa}
+\title{10. Instance Based Algs KNN Exercise}
+
+\hyphenation{
+	Mo-tor-ü-ber-wach-ung 
+}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Exercise}
+
+\textit{Implement KNN by hand for just 2 dimensions with normalization.}
+
+\textit{This is easy because:}
+
+\begin{enumerate}
+	\item You normalize your data in another table
+	\item You code a simple euclid distance function
+	\item You take a point and calculate the distance to all points
+	\item You take the list from above and sort it
+	\item You aggregate by target variable
+	\item you take the max to determine the targe class
+\end{enumerate}
+
+\textit{you are finished!}
+
+\textit{Note: This is the only chance to implement a machine learning algorithm by hand and hence learn something from the ground up!} 
+
+
+\section{Exercise}
+
+\textit{In the logistic regression example, I gave you a new iris data:}
+
+\textit{4.8,2.5,5.3,2.4}
+
+\textit{Please classify this flower using KNN.}
+
+\textit{Here is a good scikit example you can use: }
+
+\begin{itemize}
+	\item \hyperref{https://www.python-course.eu/k_nearest_neighbor_classifier.php}{}{}{Reference [1]}
+	\item \hyperref{https://drive.google.com/open?id=1DnD_RRAZuanLlJSCmJjRbGtuloZVOirX}{}{}{Packed as a notebook [2]}
+\end{itemize}
+
+
+\end{document}
