@@ -1,0 +1,29 @@
+digraph G {
+	"Age?" -> "<=30"
+	"Age?" -> "31..40"
+	"Age?"  -> ">40"
+	
+	"31..40" -> "Buys_computer = True"
+
+        "<=30" -> "student?"
+        "student?" -> "Is student"
+        "student?" -> "Is not student"
+        "Is student" -> "Buys_computer = True"
+        "Is not student" -> "Buys_computer = False"
+
+        ">40" -> "credit_rating"
+        "credit_rating" -> "Fair"
+        "credit_rating" -> "Excellent"
+        "Fair" -> "Buys_computer = True"
+        "Excellent" -> "income"
+
+        "income" -> "Low"
+        "income" -> "Medium"
+        "Low" -> "Buys_computer = False"
+        "Medium" -> "Is student?"
+
+        "Is student?" -> "Yes"
+        "Is student?" -> "No"
+        "Yes" -> "Buys_computer = True"
+        "No" -> "Buys_computer = False"
+}
